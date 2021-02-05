@@ -7,9 +7,20 @@ Animation de la page d'accueil
     animation: anim-entete 1s both cubic-bezier(0,1.08,1,1.17);
 }
 
+.principal h3 {
+    transform: translateX(-500px);
+    opacity: 0;
+    animation: anim-princip 1s both ease;
+}
+
 @keyframes anim-entete {
     0% {transform: translateX(2000px);}
     100% {transform: translateX(0);}
+}
+
+@keyframes anim-princip {
+    0% {transform: translateX(-500px); opacity: 0;}
+    100% {transform: translateX(0px); opacity: 100;}
 }
 
 /*
@@ -36,5 +47,13 @@ $columns: 5;
     .animation div:nth-of-type(#{$i}) {
        // width: (100% / $i);
         animation-delay: .5*$i#{s};
+    }
+}
+
+$columns2: 2;
+
+@for $k from 1 through $columns2 {
+    .principal h3:nth-of-type(#{$k}) {
+        animation-delay: 1*$k#{s};
     }
 }
