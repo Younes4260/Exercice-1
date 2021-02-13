@@ -99,12 +99,6 @@ p {
     }
 }
 
-div {
-    @include mobile {
-        display: none;
-    }
-}
-
 .entete {
     grid-area: entete;
 
@@ -151,6 +145,9 @@ div {
             height: 50px;
             background-color: lightgrey;
             margin-top: 30px;
+                @include mobile {
+                    display: none;
+                }
         }
 
         div:hover {

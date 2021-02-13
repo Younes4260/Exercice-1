@@ -95,12 +95,6 @@ p {
   }
 }
 
-@media (min-width: 750px) and (max-width: 1000px) {
-  div {
-    display: none;
-  }
-}
-
 .entete {
   grid-area: entete;
 }
@@ -148,6 +142,12 @@ p {
   height: 50px;
   background-color: lightgrey;
   margin-top: 30px;
+}
+
+@media (min-width: 0px) and (max-width: 1000px) {
+  .entete section div {
+    display: none;
+  }
 }
 
 .entete section div:hover {
