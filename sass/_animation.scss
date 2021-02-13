@@ -13,14 +13,43 @@ Animation de la page d'accueil
     animation: anim-princip 1s both ease;
 }
 
+
+
+$paramAnim : (
+    1: translateY(-500px),
+    2: translateY(-600px),
+    3: translateX(-500px),
+    4: translateY(600px),
+    5: translateY(500px)
+);
+
+@function couleur($propriete){
+    @return map-get($couleurs, $propriete)
+}
+
 @keyframes anim-entete {
     0% {transform: translateX(2000px);}
-    100% {transform: translateX(0);}
+    100% {transform: translateX(50px);}
+}
+
+@keyframes anim-body1 {
+    0% {background-color: $noir;}
+    100% {background-color: $blanc;}
+}
+
+@keyframes anim-body2 {
+    0% {background-color: $blanc;}
+    100% {background-color: $noir;}
 }
 
 @keyframes anim-princip {
-    0% {transform: translateX(-500px); opacity: 0;}
+    0% {transform: translateX(-2000px); opacity: 0;}
     100% {transform: translateX(0px); opacity: 100;}
+}
+
+@keyframes anim-annonce1 {
+    0% {background-color: darkgrey;}
+    100% {background-color: lightgrey;;}
 }
 
 /*
@@ -65,7 +94,19 @@ $columns2: 2;
     animation-direction: alternate-reverse;
 }
 
-@keyframes anim-annonce1 {
-    0% {background-color: #efebc5;}
-    100% {background-color: #c4bc7c;}
+body {
+    animation: anim-body1 10s both ease;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
 }
+
+body:after {
+    animation: anim-body2 10s both ease;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+
+
+
+
+

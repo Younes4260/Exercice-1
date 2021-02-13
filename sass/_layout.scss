@@ -5,27 +5,27 @@
 
 body {
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
     // background-color: rgb(179, 179, 204);
-    background-color: #fff;
+    background-color: $blanc;
 
 }
 
 
 body::after {
     content: "";
-    clip-path: polygon(0 0, 80% 0, 50% 100%, 0 100%);
+    clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
     //background-color: rgb(43, 71, 233);
-    background-color: couleur(primaire);
+    //background-color: couleur(primaire);
+    background-color: $noir;
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 50vw;
+    height: 100vh;
     top: 0;
     bottom: 0;
-    left: 0;
-    right: 0;
+    left: 25%;
     z-index: -1;
 }
 
@@ -60,7 +60,7 @@ p {
 .bloc {
     border: 1px solid #666;
     background-color: transparent;
-    color: wheat;
+    color: grey;
     font-size: 3rem;
     margin-left: 0;
     display: flex;
@@ -94,8 +94,14 @@ p {
         grid-template-areas:
             "entete entete entete"
             "menu menu menu"
-            "principal annonce1 annonce1"
+            "annonce1 annonce1 principal"
             "pied-page pied-page pied-page";
+    }
+}
+
+div {
+    @include mobile {
+        display: none;
     }
 }
 
@@ -128,7 +134,8 @@ p {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    width: 50%;
+    width: 75%;
+    border: none;
 
     section {
         display: flex;
@@ -142,7 +149,13 @@ p {
             border-radius: 50%;
             width: 50px;
             height: 50px;
-            background-color: blue;
+            background-color: lightgrey;
+            margin-top: 30px;
+        }
+
+        div:hover {
+            color: lightgrey;
+            background-color: grey;
         }
     }
 }
@@ -160,6 +173,10 @@ p {
         display: flex;
         align-items: center;
     }
+}
+
+.menu {
+    border: none;
 }
 
 .annonce2 {
@@ -181,8 +198,28 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: darkgrey;
+    opacity: 50%;
+    color: black;
+    height: 100%;
+    -webkit-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
+
     h3 {
         padding: 1rem 0 1rem 0;
+        color: black;
     }
 }
 
+.pied-page {
+    background-color: black;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.pied-page:hover {
+    color: lightgrey;
+}
